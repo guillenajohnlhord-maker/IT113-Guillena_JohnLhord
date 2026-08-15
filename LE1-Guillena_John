@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    printf("<=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=>\n");
+    printf("     WELCOME TO C PROGRAMMING\n");
+    printf("<=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=>\n");
+    printf("v            *DEBUG*               v\n");
+    printf("=        *CODE     CODE*          =\n");
+    printf("*   &LEARN           LEARN&       *\n");
+    printf("=        *CODE     CODE*          =\n");
+    printf("^            *DEBUG*              ^\n");
+    printf("<=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=>\n");
+
+
+    return 0;
+}
