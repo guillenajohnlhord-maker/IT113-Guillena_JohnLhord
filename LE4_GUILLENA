@@ -1,0 +1,52 @@
+    #include <stdio.h>
+
+    int main() {
+    char name[100];
+    char section[50];
+    float q1, q2, q3, q4;
+    float average;
+
+    printf("Enter your complete name: ");
+    fgets(name, sizeof(name), stdin);
+
+    printf("Enter your section: ");
+    fgets(section, sizeof(section), stdin);
+
+    printf("Enter 1st Quarter Grade: ");
+    scanf("%f", &q1);
+
+    printf("Enter 2nd Quarter Grade: ");
+    scanf("%f", &q2);
+
+    printf("Enter 3rd Quarter Grade: ");
+    scanf("%f", &q3);
+
+    printf("Enter 4th Quarter Grade: ");
+    scanf("%f", &q4);
+
+    average = (q1 + q2 + q3 + q4) / 4;
+
+    printf("\nStudent Name: %s", name);
+    printf("Section: %s", section);
+    printf("Average Grade: %.2f\n", average);
+
+    if (average >= 90 && average <= 100) {
+        printf("Remarks: Outstanding\n");
+    }
+    else if (average >= 85) {
+        printf("Remarks: Very Satisfactory\n");
+    }
+    else if (average >= 80) {
+        printf("Remarks: Satisfactory\n");
+    }
+    else if (average >= 75) {
+        printf("Remarks: Fair\n");
+    }
+    else {
+        printf("Remarks: Failed\n");
+    }
+    getchar();
+    getchar();
+
+    return 0;
+}
