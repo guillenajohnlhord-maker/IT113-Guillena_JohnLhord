@@ -1,0 +1,87 @@
+#include <stdio.h>
+
+int findLargest(int numbers[], int size);
+int countVowels(char text[]);
+
+int findLargest(int numbers[], int size)
+{
+    int largest = numbers[0];
+    int i;
+
+    for (i = 1; i < size; i++)
+    {
+        if (numbers[i] > largest)
+        {
+            largest = numbers[i];
+        }
+    }
+
+    return largest;
+}
+
+int countVowels(char text[])
+{
+    int count = 0;
+    int i = 0;
+
+    while (text[i] != '\0')
+    {
+        if (text[i] == 'a' || text[i] == 'e' ||
+            text[i] == 'i' || text[i] == 'o' ||
+            text[i] == 'u' || text[i] == 'A' ||
+            text[i] == 'E' || text[i] == 'I' ||
+            text[i] == 'O' || text[i] == 'U')
+        {
+            count++;
+        }
+
+        i++;
+    }
+
+    return count;
+}
+
+int main()
+{
+    int numbers[100];
+    int size;
+    int i;
+    char text[200];
+
+    printf("=== FINDING THE LARGEST ELEMENT ===\n");
+
+    printf("How many numbers will you enter? ");
+    scanf("%d", &size);
+
+    if (size < 1 || size > 100)
+    {
+        printf("Invalid number of elements.\n");
+        return 1;
+    }
+
+    for (i = 0; i < size; i++)
+    {
+        printf("Enter number %d: ", i + 1);
+        scanf("%d", &numbers[i]);
+    }
+
+    printf("The largest number is: %d\n",
+           findLargest(numbers, size));
+
+    getchar();
+
+    printf("\n=== COUNTING VOWELS ===\n");
+
+    printf("Enter a word or sentence: ");
+    fgets(text, sizeof(text), stdin);
+
+    printf("Total number of vowels: %d\n",
+       countVowels(text));
+
+    printf("\nPress ENTER to exit...");
+    getchar();
+    getchar();
+
+    
+return 0;
+}
