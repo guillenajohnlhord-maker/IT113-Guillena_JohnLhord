@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+
+    int studentID;
+    int choice;
+    char name[100];
+    char section[50];
+
+    do {
+        printf("Enter Student Number: ");
+        scanf("%d", &studentID);
+
+        printf("Enter Complete Name: ");
+        scanf(" %[^\n]", name);
+
+        printf("Enter Section: ");
+        scanf(" %[^\n]", section);
+
+        file = fopen("student_records.txt", "a");
+
+        if (file == NULL) {
+            printf("Error opening file.\n");
+            return 1;
+        }
+
+        fprintf(file, "ID Number: %d\n", studentID);
+        fprintf(file, "Complete Name: %s\n", name);
+        fprintf(file, "Section: %s\n\n", section);
+
+        fclose(file);
+
+        printf("\nRecord added and saved successfully.\n");
+
+        printf("\nAdd another student? [Enter 1 for Yes, 0 for No]: ");
+        scanf("%d", &choice);
+
+        printf("\n");
+
+    } while (choice == 1);
+
+    printf("All student records have been saved.\n");
+
+    return 0;
+}
